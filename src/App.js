@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import AdminDashboard from './AdminDashboard';
+import Side from './components/Side';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import AddCategory from './pages/AddCategory';
+import Categories from './pages/Categories';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Side />
+      <AdminDashboard /> */}
+      <Router>
+        <Routes>
+          <Route path="/add-category" element={<AddCategory />} />    {/* Add New Category */}
+          <Route path="/categories" element={<Categories />} />
+
+                   404 Not Found
+        </Routes>
+      </Router>
     </div>
   );
 }
